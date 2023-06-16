@@ -21,3 +21,5 @@ col1, col2, col3 = st.columns(3)
 col1.metric("The number of projects", data['Project ID'].count())
 col2.metric("Most popular area", int(most_common_value))
 col3.metric("Average System Size (in kW DC)", kw_average)
+
+
