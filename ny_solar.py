@@ -12,10 +12,12 @@ value_counts = data['Zip'].value_counts()
 # Find the value that repeats the most number of times
 most_common_value = value_counts.idxmax()
 
-# Count of the most common value
-count_most_common_value = value_counts.loc[most_common_value]
+#Average kw-dc
+kw_average = df['Estimated PV System Size (kWdc)'].mean()
+
 
 st.markdown('Metrics')
 col1, col2, col3 = st.columns(3)
 col1.metric("The number of projects", data['Project ID'].count())
 col2.metric("Most popular area", int(most_common_value))
+col3.metric("Average System Size", kw_average, "kW DC")
