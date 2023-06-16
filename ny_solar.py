@@ -2,7 +2,7 @@ import pandas as pd
 
 import streamlit as st
 
-data = pd.read_csv("ny_solar.csv")
+data = pd.read_csv("ny_solar.csv", low_memory = "FALSE")
 
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 
