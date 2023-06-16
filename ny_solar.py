@@ -18,4 +18,4 @@ count_most_common_value = value_counts.loc[most_common_value]
 st.markdown('Metrics')
 col1, col2, col3 = st.columns(3)
 col1.metric("The number of projects", data['Project ID'].count())
-col2.metric("Most popular area", count_most_common_value)
+col2.metric("Most popular area", most_common_value)
