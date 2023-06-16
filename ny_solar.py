@@ -13,7 +13,7 @@ value_counts = data['Zip'].value_counts()
 most_common_value = value_counts.idxmax()
 
 #Average kw-dc
-kw_average = data['Estimated PV System Size (kWdc)'].mean()
+kw_average = float(data['Estimated PV System Size (kWdc)'].mean())
 
 
 st.markdown('Metrics')
