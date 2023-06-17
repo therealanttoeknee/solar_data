@@ -12,6 +12,9 @@ value_counts = data['Zip'].value_counts()
 # Find the value that repeats the most number of times
 most_common_value = value_counts.idxmax()
 
+#string to int
+data['Estimated Annual PV Energy Production (kWh)'] = pd.to_numeric(data['Estimated Annual PV Energy Production (kWh)'].str.replace(',', ''), errors='coerce')
+
 # Sum of the annual PV energy production (GWh)
 sum_annual_prod = data['Estimated Annual PV Energy Production (kWh)'].sum() 
 
