@@ -13,7 +13,7 @@ value_counts = data['Zip'].value_counts()
 most_common_value = value_counts.idxmax()
 
 # Sum of the annual PV energy production (GWh)
-sum_annual_prod = (data['Estimated Annual PV Energy Production (kWh)'].sum())) / 10**6
+sum_annual_prod = (data['Estimated Annual PV Energy Production (kWh)'].sum()) / 10**6
 
 
 st.markdown('Metrics')
