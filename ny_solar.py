@@ -15,7 +15,7 @@ most_common_value = value_counts.idxmax()
 # Sum of the annual PV energy production (GWh)
 sum_annual_prod = data['Estimated Annual PV Energy Production (kWh)'].sum() 
 
-con = sum_annual_prod / 1,000,000,000,000
+con = sum_annual_prod / 1000000000000
 
 st.markdown('Metrics')
 col1, col2, col3 = st.columns(3)
