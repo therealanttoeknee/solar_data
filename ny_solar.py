@@ -18,8 +18,10 @@ data['Estimated Annual PV Energy Production (kWh)'] = pd.to_numeric(data['Estima
 # Calculate the sum of the values
 total_sum = data['Estimated Annual PV Energy Production (kWh)'].sum()
 
+conversion = total_sum / 10 ** 6
+
 st.markdown('Metrics')
 col1, col2, col3 = st.columns(3)
 col1.metric("The number of projects", data['Project ID'].count())
 col2.metric("Most popular area", int(most_common_value))
-col3.metric("test", total_sum)
+col3.metric("Estimated annual production (GWh)", conversion)
