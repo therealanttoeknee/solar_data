@@ -15,14 +15,10 @@ most_common_value = value_counts.idxmax()
 #string to int
 data['Estimated Annual PV Energy Production (kWh)'] = pd.to_numeric(data['Estimated Annual PV Energy Production (kWh)'].str.replace(',', ''), errors='coerce')
 
-# Sum of the annual PV energy production (GWh)
-sum_annual_prod = data['Estimated Annual PV Energy Production (kWh)'].sum() 
-
-con = int(sum_annual_prod) / 1000000000000
+print(type(data['Estimated Annual PV Energy Production (kWh)']))
 
 st.markdown('Metrics')
 col1, col2, col3 = st.columns(3)
 col1.metric("The number of projects", data['Project ID'].count())
 col2.metric("Most popular area", int(most_common_value))
-col3.metric("Total Annual Production (GWH)", int(con))
 
