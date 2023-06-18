@@ -27,11 +27,3 @@ col1, col2, col3 = st.columns(3)
 col1.metric("The number of projects", data['Project ID'].count())
 col2.metric("Zip code with the most number of installations", int(most_common_value))
 col3.metric("Estimated annual production (GWh)", round(conversion))
-
-
-data['Interconnection Date'] = pd.to_numeric(data['Interconnection Date'].str.replace('/', ''), errors='coerce')
-
-new = data['Interconnection Date']
-
-st.pyplot(new)
-
