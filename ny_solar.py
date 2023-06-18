@@ -28,4 +28,4 @@ col1.metric("The number of projects", data['Project ID'].count())
 col2.metric("Zip code with the most number of installations", int(most_common_value))
 col3.metric("Estimated annual production (GWh)", round(conversion))
 
-st.bar_chart(int(data['Interconnection Date']),data['Utility'])
+st.bar_chart(data[['Interconnection Date'],['Utility']])
