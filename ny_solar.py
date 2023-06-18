@@ -31,7 +31,7 @@ col3.metric("Estimated annual production (GWh)", round(conversion))
 
 data['Interconnection Date'] = pd.to_numeric(data['Interconnection Date'].str.replace('/', ''), errors='coerce')
 
-new = data['Interconnection Date']
+new = str(data['Interconnection Date'])
 
 really_new = new.str.replace((new[:4], ''), errors='coerce')
 
