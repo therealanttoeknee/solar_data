@@ -2,7 +2,7 @@ import pandas as pd
 
 import streamlit as st
 
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 data = pd.read_csv("ny_solar.csv", low_memory = False)
 
@@ -35,6 +35,5 @@ new = data['Interconnection Date']
 
 really_new = new.str.replace((new[:4], ''), errors='coerce')
 
-
-
+st.pyplot(really_new)
 
