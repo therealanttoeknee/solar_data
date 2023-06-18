@@ -32,6 +32,6 @@ col3.metric("Estimated annual production (GWh)", round(conversion))
 new = pd.to_datetime(data['Interconnection Date'], format='%m/%d/%Y')
 
 # Extract the year from the datetime column
-new_df = data['Interconnection Date'].dt.year
+new_df = pd.to_datetime(data['Interconnection Date']).dt.year
 
 st.bar_chart(new_df, data['Utility'])
