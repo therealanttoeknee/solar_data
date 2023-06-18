@@ -28,4 +28,10 @@ col1.metric("The number of projects", data['Project ID'].count())
 col2.metric("Zip code with the most number of installations", int(most_common_value))
 col3.metric("Estimated annual production (GWh)", round(conversion))
 
-st.bar_chart(data['Interconnection Date'], data['Utility'])
+# Convert the column to datetime format
+new = pd.to_datetime(data['Interconnection Date'], format='%m/%d/%Y')
+
+# Extract the year from the datetime column
+new_df = data['Interconnection Date'].dt.year
+
+st.bar_chart(new_df, data['Utility'])
