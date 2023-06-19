@@ -38,7 +38,7 @@ df_sorted = data.sort_values('Interconnection Date', ascending=False)
 
 util = data['Utility']
 
-st.bar_chart(x=util)
+st.bar_chart(util,data['Interconnection Date'])
 
 
 
