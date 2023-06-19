@@ -30,9 +30,15 @@ col1.metric("The number of projects", data['Project ID'].count())
 col2.metric("Zip code with the most number of installations", int(most_common_value))
 col3.metric("Estimated annual production (GWh)", round(conversion))
 
+# Convert the column to datetime format
+df['Interconnection Date'] = pd.to_datetime(df['Interconnection Date'])
+
+# Sort the column in descending order
+df_sorted = df.sort_values('Interconnection Date', ascending=False)
+
 util = data['Utility']
 
-st.bar_chart(util)
+st.bar_chart(df_sorted,util)
 
 
 
