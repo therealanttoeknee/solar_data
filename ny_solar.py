@@ -36,9 +36,11 @@ data['Interconnection Date'] = pd.to_datetime(data['Interconnection Date'])
 # Sort the column in descending order
 df_sorted = data.sort_values('Interconnection Date', ascending=False)
 
-util = data['Utility']
+# Create a new DataFrame with the desired x-axis and y-axis data
+chart_data = pd.DataFrame({'Utility': df_sorted['Utility'], 'Interconnection Date': df_sorted['Interconnection Date']})
 
-st.bar_chart(util,data['Interconnection Date'])
+# Display the bar chart
+st.bar_chart(chart_data)
 
 
 
