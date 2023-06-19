@@ -31,10 +31,10 @@ col2.metric("Zip code with the most number of installations", int(most_common_va
 col3.metric("Estimated annual production (GWh)", round(conversion))
 
 # Convert the column to datetime format
-df['Interconnection Date'] = pd.to_datetime(df['Interconnection Date'])
+data['Interconnection Date'] = pd.to_datetime(data['Interconnection Date'])
 
 # Sort the column in descending order
-df_sorted = df.sort_values('Interconnection Date', ascending=False)
+df_sorted = data.sort_values('Interconnection Date', ascending=False)
 
 util = data['Utility']
 
