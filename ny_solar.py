@@ -42,7 +42,8 @@ value_counts = data['Year'].value_counts()
 # Create a bar chart
 st.bar_chart(value_counts)
 
-
+# Create a bar chart
+st.bar_chart(data['Utility'])
 
 
 
