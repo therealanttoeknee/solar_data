@@ -30,14 +30,26 @@ col1.metric("The number of projects", data['Project ID'].count())
 col2.metric("Zip code with the most number of installations", int(most_common_value))
 col3.metric("Estimated annual production (GWh)", round(conversion))
 
-# Convert the column to datetime format
-new = pd.to_datetime(data['Interconnection Date'], format='%m/%d/%Y')
+util = data['Utility']
 
-# Extract the year from the datetime column
-new_df = pd.to_datetime(data['Interconnection Date']).dt.year
+st.bar_chart(util)
 
-# Create a bar chart using plotly express
-fig = px.bar(new_df)
 
-# Display the chart in Streamlit
-st.plotly_chart(fig)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
