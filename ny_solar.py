@@ -30,17 +30,8 @@ col1.metric("The number of projects", data['Project ID'].count())
 col2.metric("Zip code with the most number of installations", int(most_common_value))
 col3.metric("Estimated annual production (GWh)", round(conversion))
 
-# Convert the column to datetime format
-data['Interconnection Date'] = pd.to_datetime(data['Interconnection Date'])
-
-# Sort the column in descending order
-df_sorted = data.sort_values('Interconnection Date', ascending=False)
-
-# Create a new DataFrame with the desired x-axis and y-axis data
-chart_data = pd.DataFrame({'Utility': df_sorted['Utility'], 'Interconnection Date': df_sorted['Interconnection Date']})
-
 # Display the bar chart
-st.bar_chart(chart_data)
+st.bar_chart(data['Utility'])
 
 
 
