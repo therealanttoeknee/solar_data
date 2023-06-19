@@ -31,7 +31,7 @@ col2.metric("Zip code with the most number of installations", int(most_common_va
 col3.metric("Estimated annual production (GWh)", round(conversion))
 
 # Display the bar chart
-st.bar_chart(data['Utility'])
+st.bar_chart(data['Interconnection Date'])
 
 
 
