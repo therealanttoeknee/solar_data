@@ -36,11 +36,8 @@ new = pd.to_datetime(data['Interconnection Date'], format='%m/%d/%Y')
 # Extract the year from the datetime column
 new_df = pd.to_datetime(data['Interconnection Date']).dt.year
 
-# Group the data by year and utility and count the occurrences
-grouped_data = data.groupby([new_df, 'Utility']).size().reset_index(name='Count')
-
 # Create a bar chart using plotly express
-fig = px.bar(grouped_data, x='Year', y='Count', color='Utility', barmode='group')
+fig = px.bar(new_df)
 
 # Display the chart in Streamlit
 st.plotly_chart(fig)
