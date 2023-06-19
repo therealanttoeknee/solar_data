@@ -4,6 +4,8 @@ import streamlit as st
 
 import matplotlib.pyplot as plt
 
+import plotly.express as px
+
 data = pd.read_csv("ny_solar.csv", low_memory = False)
 
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
@@ -34,4 +36,11 @@ new = pd.to_datetime(data['Interconnection Date'], format='%m/%d/%Y')
 # Extract the year from the datetime column
 new_df = pd.to_datetime(data['Interconnection Date']).dt.year
 
-st.bar_chart(new_df)
+# Group the data by year and utility and count the occurrences
+grouped_data = data.groupby([new_df, 'Utility']).size().reset_index(name='Count')
+
+# Create a bar chart using plotly express
+fig = px.bar(grouped_data, x='Year', y='Count', color='Utility', barmode='group')
+
+# Display the chart in Streamlit
+st.plotly_chart(fig)
