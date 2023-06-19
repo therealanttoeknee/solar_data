@@ -31,13 +31,16 @@ col2.metric("Zip code with the most number of installations", int(most_common_va
 col3.metric("Estimated annual production (GWh)", round(conversion))
 
 # Convert the column to datetime format
-data['Interconnection Date'] = pd.to_datetime(data['Interconnection Date'])
+data['Interconnection Date'] = pd.to_datetime(data['Interconnection Date'], format='%m/%d/%Y')
 
-# Sort the column in descending order
-df_sorted = data.sort_values('Interconnection Date', ascending=False)
+# Extract the year from the datetime column
+data['Year'] = data['Interconnection Date'].dt.year
 
-# Display the bar chart
-st.bar_chart(df_sorted)
+# Count the occurrences of each unique value in the 'Year' column
+value_counts = data['Year'].value_counts()
+
+# Create a bar chart
+st.bar_chart(value_counts)
 
 
 
