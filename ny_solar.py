@@ -11,7 +11,7 @@ data = pd.read_csv("ny_solar.csv", low_memory = False)
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 
 # Count the occurrences of each unique value in the column
-value_counts = data['City/Town'].value_counts()
+value_counts = data['County'].value_counts()
 
 # Find the value that repeats the most number of times
 most_common_value = value_counts.idxmax()
