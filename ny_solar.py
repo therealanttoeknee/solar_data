@@ -48,7 +48,7 @@ values, counts = np.unique(data['Utility'], return_counts=True)
 
 cumulative_amounts = np.cumsum(counts)
 
-plt.bar(values, cumulative_amounts)
+st.pyplot(cumulative_amounts)
 
 
 
