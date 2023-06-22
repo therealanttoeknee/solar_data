@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 
 import plotly.express as px
 
+import numpy as np
+
 data = pd.read_csv("ny_solar.csv", low_memory = False)
 
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
@@ -42,8 +44,11 @@ value_counts = data['Year'].value_counts()
 # Create a bar chart
 st.bar_chart(value_counts)
 
-# Create a bar chart
-st.bar_chart(data['Utility'])
+values, counts = np.unique(data['Utility'], return_counts=True)
+
+cumulative_amounts = np.cumsum(counts)
+
+st.bar_graph(data['Utility'], cumulative_amounts
 
 
 
