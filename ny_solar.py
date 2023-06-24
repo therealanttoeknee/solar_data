@@ -25,12 +25,8 @@ with st.sidebar:
   selected_county = st.selectbox('Please select a county in New York State',
                   unique_counties)
 
-
 # Count the occurrences of each unique value in the column for that specific county
 value_counts = data[data['County' == selected_county]].value_counts()
-
-# Find the value that repeats the most number of times
-most_common_value = value_counts.idxmax()
 
 # Remove commas from values and convert to numeric type
 data['Estimated Annual PV Energy Production (kWh)'] = pd.to_numeric(data['Estimated Annual PV Energy Production (kWh)'].str.replace(',', ''), errors='coerce')
