@@ -27,7 +27,7 @@ with st.sidebar:
 
 
 # Count the occurrences of each unique value in the column for that specific county
-value_counts = data.loc[data['County' == selected_county]].value_counts()
+value_counts = data[data['County' == selected_county]].value_counts()
 
 # Find the value that repeats the most number of times
 most_common_value = value_counts.idxmax()
