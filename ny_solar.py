@@ -29,10 +29,7 @@ with st.sidebar:
 value_counts = data[data['County'] == selected_county]['County'].value_counts()
 
 # Remove commas from values and convert to numeric type
-data['Estimated Annual PV Energy Production (kWh)'] = pd.to_numeric(data[data['Estimated Annual PV Energy Production (kWh)'] == selected_county])
-
-data['Estimated Annual PV Energy Production (kWh)'] = (data['Estimated Annual PV Energy Production (kWh)'].str.replace(',', ''), errors='coerce')
-                                                                    
+data['Estimated Annual PV Energy Production (kWh)'] = pd.to_numeric(data['Estimated Annual PV Energy Production (kWh)'].str.replace(',', ''), errors='coerce')                                                                    
 
 # Calculate the sum of the values
 total_sum = data['Estimated Annual PV Energy Production (kWh)'].sum()
