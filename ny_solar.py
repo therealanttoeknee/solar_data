@@ -34,9 +34,9 @@ filter = data[data['Estimated Annual PV Energy Production (kWh)'] == selected_co
 #data['Estimated Annual PV Energy Production (kWh)'] = pd.to_numeric(data['Estimated Annual PV Energy Production (kWh)'].str.replace(',', ''), errors='coerce')                                                                    
 
 # Calculate the sum of the values
-total_sum = data['Estimated Annual PV Energy Production (kWh)'].sum()
+#total_sum = data['Estimated Annual PV Energy Production (kWh)'].sum()
 
-conversion = total_sum / 10 ** 6
+#conversion = total_sum / 10 ** 6
 
 st.markdown('Metrics')
 col1, col2, col3 = st.columns(3)
