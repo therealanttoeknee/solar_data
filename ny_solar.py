@@ -26,7 +26,7 @@ with st.sidebar:
                   unique_counties)
 
 # Count the occurrences of each unique value in the column for that specific county
-value_counts = data[data['County'] == selected_county]['County'].value_counts()
+value_counts = data[data['County'] == selected_county].value_counts()
 
 # Remove commas from values and convert to numeric type
 data['Estimated Annual PV Energy Production (kWh)'] = pd.to_numeric(data['Estimated Annual PV Energy Production (kWh)'].str.replace(',', ''), errors='coerce')
