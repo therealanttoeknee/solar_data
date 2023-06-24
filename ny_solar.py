@@ -22,10 +22,10 @@ unique_counties = unique_counties.sort_values(by='unique_county', ascending=True
 st.sidebar.header("Welcome! :-) ")
 
 with st.sidebar:
-  select_county = st.selectbox('Please select a county in New York State',
+  selected_county = st.selectbox('Please select a county in New York State',
                   unique_counties)
-
-# Count the occurrences of each unique value in the column
+  print(selected_county)
+# Count the occurrences of each unique value in the column for that specific county
 value_counts = data['County'].value_counts()
 
 # Find the value that repeats the most number of times
