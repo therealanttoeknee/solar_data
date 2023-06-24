@@ -14,6 +14,10 @@ st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 
 unique_counties = pd.DataFrame(data['County'].unique(), columns = ['unique_county'])
 
+#Reorganizes the column in alphabetical order
+unique_counties = unique_counties.sort_values(by='unique_county', ascending=True)
+
+
 #sidebar
 st.sidebar.header("Welcome! :-) ")
 
