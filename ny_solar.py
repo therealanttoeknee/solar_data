@@ -10,6 +10,13 @@ import numpy as np
 
 data = pd.read_csv("ny_solar.csv", low_memory = False)
 
+#sidebar
+st.sidebar.header("Welcome! :-) ")
+
+with st.sidebar:
+  select_county = st.selectbox('Please select a county in New York State',
+    (data['County']))
+
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 
 # Count the occurrences of each unique value in the column
