@@ -12,12 +12,14 @@ data = pd.read_csv("ny_solar.csv", low_memory = False)
 
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 
+unique_counties = pd.DataFrame(data['County'].unique(), columns = ['unique_county'])
+
 #sidebar
 st.sidebar.header("Welcome! :-) ")
 
 with st.sidebar:
   select_county = st.selectbox('Please select a county in New York State',
-    (data['County']))
+                  unique_counties)
 
 # Count the occurrences of each unique value in the column
 value_counts = data['County'].value_counts()
