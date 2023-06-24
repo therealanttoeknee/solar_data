@@ -42,7 +42,7 @@ conversion = total_sum / 10 ** 6
 
 st.markdown('Metrics')
 col1, col2, col3 = st.columns(3)
-col1.metric("The number of projects", data['Project ID'].count())
+col1.metric("The number of projects", value_counts)
 col2.metric("County with the most number of installations", most_common_value)
 col3.metric("Estimated annual production (GWh)", round(conversion))
 
