@@ -39,26 +39,9 @@ conversion = total_sum / 10 ** 6
 st.markdown('Metrics')
 col1, col2, col3 = st.columns(3)
 col1.metric("The number of projects", value_counts)
-col2.metric("County with the most number of installations", most_common_value)
-col3.metric("Estimated annual production (GWh)", round(conversion))
 
-# Convert the column to datetime format
-data['Interconnection Date'] = pd.to_datetime(data['Interconnection Date'], format='%m/%d/%Y')
 
-# Extract the year from the datetime column
-data['Year'] = data['Interconnection Date'].dt.year
 
-# Count the occurrences of each unique value in the 'Year' column
-value_counts = data['Year'].value_counts()
-
-# Create a bar chart
-st.bar_chart(value_counts)
-
-values, counts = np.unique(data['Utility'], return_counts=True)
-
-cumulative_amounts = np.cumsum(counts)
-
-st.bar_chart(data['Utility'])
 
 
 
