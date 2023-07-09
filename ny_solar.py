@@ -28,12 +28,14 @@ subsetoooor = data[data['County'] == selected_county][['County', 'Estimated Annu
 
 subsetoooor['Estimated Annual PV Energy Production (kWh)'] = subsetoooor['Estimated Annual PV Energy Production (kWh)'].str.replace(',', '').astype(float)
 
-convert = subsetoooor['Estimated Annual PV Energy Production (kWh)'].sum()
+sum_est_ann_pv_prod = subsetoooor['Estimated Annual PV Energy Production (kWh)'].sum()
+
+convert_sum = sum_est_ann_pv_prod / 10 ** 6 
 
 st.markdown('Metrics')
 col1, col2, col3 = st.columns(3)
 col1.metric("The number of projects", value_counts)
-col2.metric("Estimated Annual Production", convert)
+col2.metric("Estimated Annual Production (GWh)", convert_sum)
 
 
 
