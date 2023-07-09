@@ -35,7 +35,7 @@ convert_sum = sum_est_ann_pv_prod / 10 ** 6
 st.markdown('Metrics')
 col1, col2, col3 = st.columns(3)
 col1.metric("The number of projects", value_counts)
-col2.metric("Estimated Annual Production (GWh)", convert_sum)
+col2.metric("Estimated Annual Production (GWh)", round(convert_sum,2))
 
 
 
