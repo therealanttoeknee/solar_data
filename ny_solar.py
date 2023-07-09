@@ -27,6 +27,8 @@ value_counts = data[data['County'] == selected_county]['County'].value_counts()
 subsetoooor = data[data['County'] == selected_county][['County', 'Estimated Annual PV Energy Production (kWh)']]
 
 st.write(subsetoooor)
+st.write(data.dtypes())
+
 
 st.markdown('Metrics')
 col1, col2, col3 = st.columns(3)
