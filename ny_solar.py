@@ -26,7 +26,7 @@ value_counts = data[data['County'] == selected_county]['County'].value_counts()
 # subset the data frame to select "selected_county" and each kW-DC value 
 subsetoooor = data[data['County'] == selected_county][['County', 'Estimated Annual PV Energy Production (kWh)']]
 
-sum_pv_system_size = subsetoooor['Estimated Annual PV Energy Production (kWh)'].sum() / 1000000
+sum_pv_system_size = subsetoooor['Estimated Annual PV Energy Production (kWh)'].sum()
 
 st.markdown('Metrics')
 col1, col2, col3 = st.columns(3)
