@@ -24,12 +24,14 @@ with st.sidebar:
 value_counts = data[data['County'] == selected_county]['County'].value_counts()
 
 # subset the data frame to select "selected_county" and each kW-DC value 
-subsetoooor = data[['County', 'Utility']]
+subsetoooor = data[data['County'] == selected_county][['County', 'Estimated PV System Size (kWdc)']]
+
+sum_pv_system_size = subsetoooor['Estimated PV System Size (kWdc)'].sum()
 
 st.markdown('Metrics')
 col1, col2, col3 = st.columns(3)
 col1.metric("The number of projects", value_counts)
-#col2.metric("Estimated Annual Production", filter)
+col2.metric("Estimated Annual Production", sum_pv_system_size)
 
 
 
