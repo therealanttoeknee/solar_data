@@ -35,7 +35,9 @@ convert_sum = sum_est_ann_pv_prod / 10 ** 6
 #city/town with the most projects
 subset = data[data['County'] == selected_county][['County', 'City/Town']]
 
-subset = subset.value_counts().idxmax()
+subset = subset.value_counts()
+
+subset = subset.index[0]
 
 st.markdown('Metrics')
 col1, col2, col3 = st.columns(3)
