@@ -47,11 +47,8 @@ col1.metric("The number of projects", value_counts)
 col2.metric("Estimated Annual Production (GWh)", round(convert_sum,2))
 col3.metric("City / Town with the most number of installations:", subsett)
 
-
-
-
-
-
+# subset the data frame to select "selected_county" and each kW-DC value 
+mf_subset = data[data['County'] == selected_county][['Interconnection Date', 'Estimated PV System Size (kWdc)']]
 
 
 
