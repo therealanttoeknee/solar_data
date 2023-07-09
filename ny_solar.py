@@ -35,19 +35,17 @@ convert_sum = sum_est_ann_pv_prod / 10 ** 6
 #city/town with the most projects
 subset = data[data['County'] == selected_county][['County', 'City/Town']]
 
-subset_a = subset.value_counts()
+subsett = subset['City/Town']
 
-subset_b = subset.index[0]
+subsett = subsett.value_counts()
 
-st.write(subset_a)
-st.write(subset_b)
-
+subsett = subsett.index[0]
 
 st.markdown('Metrics')
 col1, col2, col3 = st.columns(3)
 col1.metric("The number of projects", value_counts)
 col2.metric("Estimated Annual Production (GWh)", round(convert_sum,2))
-col3.metric("City / Town with the most number of installations:", subset)
+col3.metric("City / Town with the most number of installations:", subsett)
 
 
 
