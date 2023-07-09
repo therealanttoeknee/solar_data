@@ -37,7 +37,7 @@ filter = data[data['Estimated Annual PV Energy Production (kWh)'] == selected_co
 st.markdown('Metrics')
 col1, col2, col3 = st.columns(3)
 col1.metric("The number of projects", value_counts)
-col2.metric("Estimated Annual Production", int(filter))
+col2.metric("Estimated Annual Production", fitler.astype(int))
 
 
 
